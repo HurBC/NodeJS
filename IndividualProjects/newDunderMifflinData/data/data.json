@@ -1,0 +1,449 @@
+{
+    "name": "Dunder Mifflin",
+    "direction": "123 Scranton Avenue Scranton, PA 18503 E.E.U.U",
+    "contact": {
+        "Email": "info@dundermifflin.com",
+        "Number": "+1 8845 3255",
+        "SocialMedia": {
+            "Facebook": "Dunder Mifflin Paper Company",
+            "Twitter": "@DunderMifflin",
+            "Instagram": "@DunderMifflin_Official",
+            "LinkedIn": "Dunder Mifflin Paper Company",
+            "TikTok": "@DunderMifflinPapers"
+        }
+    },
+    "principalBranch": {
+        "id": "322b9ad",
+        "branch": "Dunder Mifflin Scranton",
+        "direction": "123 Scranton Avenue, Scranton, PA 18503, EEUU",
+        "contact": {
+            "phone": "+1 884-532-5501",
+            "email": "scranton@dundermifflin.com",
+            "social_media": {
+                "Facebook": "DunderMifflinScranton",
+                "Twitter": "@DMS_contact",
+                "Instagram": "dunderMifflin_scranton"
+            }
+        }
+    },
+    "branches": [
+        {
+            "id": "322b9ad",
+            "branch": "Dunder Mifflin Scranton",
+            "direction": "123 Scranton Avenue, Scranton, PA 18503, EEUU",
+            "contact": {
+                "phone": "+1 884-532-5501",
+                "email": "scranton@dundermifflin.com",
+                "social_media": {
+                    "Facebook": "DunderMifflinScranton",
+                    "Twitter": "@DMS_contact",
+                    "Instagram": "dunderMifflin_scranton"
+                }
+            }
+        },
+        {
+            "id": "e54cda6",
+            "branch": "Dunder Mifflin Utica",
+            "direction": "456 Utica Street, Utica, NY 13501, EEUU",
+            "contact": {
+                "phone": "+1 877-555-5502",
+                "email": "utica@dundermifflin.com",
+                "social_media": {
+                    "Facebook": "DunderMifflinUtica",
+                    "Twitter": "@DMU_contact",
+                    "Instagram": "dunderMifflin_utica"
+                }
+            }
+        },
+        {
+            "id": "44ac850",
+            "branch": "Dunder Mifflin Stamford",
+            "direction": "789 Stamford Avenue, Stamford, CT 06901, EEUU",
+            "contact": {
+                "phone": "+1 866-555-5503",
+                "email": "stamford@dundermifflin.com",
+                "social_media": {
+                    "Facebook": "DunderMifflinStamford",
+                    "Twitter": "@DMS_contact",
+                    "Instagram": "dunderMifflin_stamford"
+                }
+            }
+        }
+    ],
+    "products": [
+        {
+            "id": "a6d0379",
+            "name": "Papel reciclado de Oficina",
+            "description": "Resma de papel de oficina de alta calidad hecho de material reciclado. Tamaño estándar.",
+            "price": 12.99,
+            "stock": 500
+        },
+        {
+            "id": "8bfdb06",
+            "name": "Papel de Copiadora Reciclado",
+            "description": "Papel para copiadora de excelente rendimiento y lisura, fabricado con papel reciclado.",
+            "price": 8.49,
+            "stock": 800
+        },
+        {
+            "id": "afc8cc3",
+            "name": "Cartuchos de Tinta Reciclados",
+            "description": "Cartuchos de tinta remanufacturados y resellados para impresoras láser y de inyección de tinta.",
+            "price": 35.99,
+            "stock": 200
+        },
+        {
+            "id": "f4a3b75",
+            "name": "Carpetas de Cartón Reciclado",
+            "description": "Carpetas de anillas resistentes y ecológicas, hechas de cartón reciclado y con cubiertas de papel kraft.",
+            "price": 4.79,
+            "stock": 300
+        },
+        {
+            "id": "3a548a7",
+            "name": "Notas Adhesivas Ecológicas",
+            "description": "Bloc de notas adhesivas en colores variados, fabricadas con papel reciclado y adhesivo libre de solventes.",
+            "price": 3.29,
+            "stock": 1000
+        },
+        {
+            "id": "7ce3430",
+            "name": "Sobres de Papel Reciclado",
+            "description": "Sobres de papel kraft reciclado con cierre autoadhesivo para envíos y correspondencia.",
+            "price": 6.99,
+            "stock": 600
+        },
+        {
+            "id": "a0e3a47",
+            "name": "Cuadernos Ecológicos",
+            "description": "Cuadernos con tapas de cartón reciclado y hojas interiores de papel reciclado sin blanquear.",
+            "price": 5.49,
+            "stock": 400
+        },
+        {
+            "id": "151cf75",
+            "name": "Marcadores Permanentes Recargables",
+            "description": "Set de marcadores permanentes con tintas recargables y puntas resistentes.",
+            "price": 9.99,
+            "stock": 150
+        },
+        {
+            "id": "509712b",
+            "name": "Lápices de Grafito Sostenible",
+            "description": "Lápices de grafito ecológicos fabricados con madera de bosques sostenibles.",
+            "price": 1.49,
+            "stock": 200
+        },
+        {
+            "id": "2cdf55a",
+            "name": "Bolígrafos de Plástico Reciclado",
+            "description": "Bolígrafos retráctiles con cuerpo de plástico reciclado y tinta de larga duración.",
+            "price": 2.29,
+            "stock": 500
+        }
+    ],
+    "manager": {
+        "id": "b1eeb9e",
+        "firstName": "Michael",
+        "lastName": "Scott",
+        "email": "michael.scott@dundermifflin.com",
+        "age": 46,
+        "born": 1964,
+        "position": "Gerente",
+        "department": "Gerentia",
+        "salary": 60000,
+        "phone": "555-123-4567",
+        "address": "123 Avenida Dunder",
+        "emergencyContact": "Jane Smith (sister) - 555-987-6543",
+        "skills": [
+            "Liderazgo",
+            "Gestión",
+            "Comunicación"
+        ]
+    },
+    "employees": 15,
+    "staff": [
+        {
+            "id": "b1eeb9e",
+            "firstName": "Michael",
+            "lastName": "Scott",
+            "email": "michael.scott@dundermifflin.com",
+            "age": 46,
+            "born": 1964,
+            "position": "Gerente",
+            "department": "Gerentia",
+            "salary": 60000,
+            "phone": "555-123-4567",
+            "address": "123 Avenida Dunder",
+            "emergencyContact": "Jane Smith (sister) - 555-987-6543",
+            "skills": [
+                "Liderazgo",
+                "Gestión",
+                "Comunicación"
+            ]
+        },
+        {
+            "id": "f75dba3",
+            "firstName": "Jim",
+            "lastName": "Halpert",
+            "email": "jim.halpert@dundermifflin.com",
+            "age": 32,
+            "born": 1978,
+            "position": "Asociado de Ventas",
+            "department": "Ventas",
+            "salary": 45000,
+            "phone": "555-234-5678",
+            "address": "456 Calle Scranton",
+            "emergencyContact": "Pan Beesly (wife) - 555-876-5432",
+            "skills": [
+                "Venta consultiva",
+                "Comunicación",
+                "Empatía"
+            ]
+        },
+        {
+            "id": "b8bc777",
+            "firstName": "Pam",
+            "lastName": "Beesly",
+            "email": "pam.beesly@dundermifflin.com",
+            "age": 31,
+            "born": 1979,
+            "position": "Recepcionista",
+            "department": "Recepcion",
+            "salary": 38000,
+            "phone": "555-345-6789",
+            "address": "789 Plaza Paper",
+            "emergencyContact": "Jim Halpert (husband) - 555-765-4321",
+            "skills": [
+                "Alegre",
+                "Organización",
+                "Motivada"
+            ]
+        },
+        {
+            "id": "535553c",
+            "firstName": "Dwight",
+            "lastName": "Schrute",
+            "email": "dwight.schrute@dundermifflin.com",
+            "age": 38,
+            "born": 1972,
+            "position": "Asociado de Ventas",
+            "department": "Ventas",
+            "salary": 45000,
+            "phone": "555-456-7890",
+            "address": "101 Granja Schrute",
+            "emergencyContact": "Mose Schrute (cousin) - 555-654-3210",
+            "skills": [
+                "Ventas directas",
+                "Conocimiento de productos",
+                "Autonomía"
+            ]
+        },
+        {
+            "id": "1215bf6",
+            "firstName": "Angela ",
+            "lastName": "Martin",
+            "email": "angela .martin@dundermifflin.com",
+            "age": 38,
+            "born": 1972,
+            "position": "Contador",
+            "department": "Contabilidad",
+            "salary": 55000,
+            "phone": "555-567-8901",
+            "address": "202 Calle Contabilidad",
+            "emergencyContact": "Dwight Schrute (boyfriend) - 555-432-1098",
+            "skills": [
+                "Contabilidad",
+                "Auditoría",
+                "Precisión"
+            ]
+        },
+        {
+            "id": "a1f2777",
+            "firstName": "Kevin ",
+            "lastName": "Malone",
+            "email": "kevin .malone@dundermifflin.com",
+            "age": 43,
+            "born": 1967,
+            "position": "Contador",
+            "department": "Contabilidad",
+            "salary": 55000,
+            "phone": "555-678-9012",
+            "address": "303 Avenida Contabilidad",
+            "emergencyContact": "Don Malone (Hermano) - 555-567-8901",
+            "skills": [
+                "Alegre",
+                "Divertido"
+            ]
+        },
+        {
+            "id": "993cc1d",
+            "firstName": "Oscar",
+            "lastName": "Martinez",
+            "email": "oscar.martinez@dundermifflin.com",
+            "age": 42,
+            "born": 1968,
+            "position": "Contador",
+            "department": "Contabilidad",
+            "salary": 55000,
+            "phone": "555-789-0123",
+            "address": "404 Calle Contabilidad",
+            "emergencyContact": "Nobody",
+            "skills": [
+                "Contabilidad",
+                "Análisis financiero",
+                "Informes"
+            ]
+        },
+        {
+            "id": "8d40332",
+            "firstName": "Ryan",
+            "lastName": "Howard",
+            "email": "ryan.howard@dundermifflin.com",
+            "age": 30,
+            "born": 1980,
+            "position": "Asociado de Ventas",
+            "department": "Ventas",
+            "salary": 45000,
+            "phone": "555-890-1234",
+            "address": "505 Avenida Ventas",
+            "emergencyContact": "Kelly Kapoor (ex-girlfriend) - 555-789-0123",
+            "skills": [
+                "Ventas",
+                "Comunicación",
+                "Innovación"
+            ]
+        },
+        {
+            "id": "0622983",
+            "firstName": "Andy",
+            "lastName": "Bernard",
+            "email": "andy.bernard@dundermifflin.com",
+            "age": 37,
+            "born": 1973,
+            "position": "Asociado de Ventas",
+            "department": "Ventas",
+            "salary": 45000,
+            "phone": "555-234-5678",
+            "address": "606 Calle Ventas",
+            "emergencyContact": "Walter Bernard (padre) - 555-345-6789",
+            "skills": [
+                "Ventas",
+                "Comunicación",
+                "Presentaciones"
+            ]
+        },
+        {
+            "id": "7e35d13",
+            "firstName": "Stanley",
+            "lastName": "Hudson",
+            "email": "stanley.hudson@dundermifflin.com",
+            "age": 58,
+            "born": 1952,
+            "position": "Asociado de Ventas",
+            "department": "Ventas",
+            "salary": 45000,
+            "phone": "555-678-9012",
+            "address": "707 Avenida Ventas",
+            "emergencyContact": "Teri Hudson (esposa) - 555-456-7890",
+            "skills": [
+                "Ventas",
+                "Negociación",
+                "Resolución de problemas"
+            ]
+        },
+        {
+            "id": "0e0236c",
+            "firstName": "Phyllis",
+            "lastName": "Vance",
+            "email": "phyllis.vance@dundermifflin.com",
+            "age": 48,
+            "born": 1962,
+            "position": "Asociado de Ventas",
+            "department": "Ventas",
+            "salary": 45000,
+            "phone": "555-789-0123",
+            "address": "808 Calle Ventas",
+            "emergencyContact": "Bob Vance (esposo) - 555-567-8901",
+            "skills": [
+                "Ventas",
+                "Relaciones interpersonales",
+                "Gestión de clientes"
+            ]
+        },
+        {
+            "id": "b9a6306",
+            "firstName": "Kelly",
+            "lastName": "Kapoor ",
+            "email": "kelly.kapoor @dundermifflin.com",
+            "age": 30,
+            "born": 1980,
+            "position": "Servicio al cliente",
+            "department": "Clientes",
+            "salary": 40000,
+            "phone": "555-234-5678",
+            "address": "123 Calle Servicio",
+            "emergencyContact": "Ravi Kapoor (hermano) - 555-345-6789",
+            "skills": [
+                "Servicio al cliente",
+                "Comunicación",
+                "Resolución de problemas"
+            ]
+        },
+        {
+            "id": "f599896",
+            "firstName": "Toby",
+            "lastName": "Flenderson ",
+            "email": "toby.flenderson @dundermifflin.com",
+            "age": 48,
+            "born": 1962,
+            "position": "Recursos Humanos",
+            "department": "Recursos Humanos",
+            "salary": 52000,
+            "phone": "555-678-9012",
+            "address": "456 Calle Recursos",
+            "emergencyContact": "Gino Flenderson (hijo) - 555-456-7890",
+            "skills": [
+                "Recursos Humanos",
+                "Gestión de personal",
+                "Resolución de conflictos"
+            ]
+        },
+        {
+            "id": "c77f8e5",
+            "firstName": "Creed",
+            "lastName": "Bratton ",
+            "email": "creed.bratton @dundermifflin.com",
+            "age": 67,
+            "born": 1943,
+            "position": "Control de Calidad",
+            "department": "Calidad",
+            "salary": 48000,
+            "phone": "555-789-0123",
+            "address": "No quiso responder",
+            "emergencyContact": "Creed Bratton (él mismo) - 555-789-0123",
+            "skills": [
+                "Desconocido"
+            ]
+        },
+        {
+            "id": "f9715cd",
+            "firstName": "Erin",
+            "lastName": "Hannon ",
+            "email": "erin.hannon @dundermifflin.com",
+            "age": 24,
+            "born": 1986,
+            "position": "Control de Calidad",
+            "department": "Calidad",
+            "salary": 48000,
+            "phone": "555-123-4567",
+            "address": "567 Calle Calidad",
+            "emergencyContact": "Gabe Lewis (Novio) - 555-234-5678",
+            "skills": [
+                "Control de Calidad",
+                "Análisis detallado",
+                "Organización"
+            ]
+        }
+    ]
+}

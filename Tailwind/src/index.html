@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/src/static/css/output.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <header class="p-2 z-10 w-full h-17 fixed flex justify-center items-center bg-gradient-to-r from-stone-950 to-stone-800 border-b-2">
+    <aside class="w-1/2 flex justify-items-start items-center gap-6">
+      <img src="static/img/logo.png" alt="logo" class="w-14">
+      <h1 class="text-3xl font-bold text-stone-300">
+        Cremates
+      </h1>
+    </aside>
+    <nav class="w-1/2 h-17 flex gap-11">
+      <ul class="text-orange-100  flex gap-9">
+        <a href="#main"><ion-icon name="home" class="text-2xl"></ion-icon></a>
+        <a href="#como_participar">¿Como participar?</a>
+        <a href="#remates">Proximos remates</a>
+        <a href="#contact">Remata con Nosotros</a>
+      </ul>
+      <ion-icon name="person" class="text-orange-100 text-2xl"></ion-icon>
+    </nav>
+  </header>
+  <section id="main" class="h-screen text-stone-300 bg-stone-950 pt-16 grid grid-cols-3">
+    <article class="flex flex-col justify-center items-center gap-10 bg-stone-800/45 col-span-1 h-full">
+      <button class="border-2 w-1/3 h-16 shadow-inner-f-b bg-stone-800 transition-all duration-500 ease-in-out hover:text-orange-100 hover:rounded hover:shadow-inner-f-bf">
+        Iniciar Sesion
+      </button>
+      <button class="border-2 w-1/3 h-16 shadow-inner-f-b bg-stone-800 transition-all duration-500 ease-in-out hover:text-orange-100 hover:rounded hover:shadow-inner-f-bf">
+        Registrarse
+      </button>
+    </article>
+    <aside class="col-span-2 flex flex-col gap-3 justify-center items-center">
+      <div class="text-left translate-y-8">
+        <h1 class="text-5xl">Central Remates</h1>
+        <p class="text-xl">Te acercamos los mejores remates</p>
+      </div>
+    </aside>
+  </section>
+  <section id="remates" class="bg-orange-100 text-stone-600 h-72 flex flex-col justify-start items-center">
+    <article class="flex flex-col justify-center items-center translate-y-6 gap-8">
+      <h1 class="font-bold text-3xl tracking-widest">REMATES</h1>
+      <div class="text-center flex flex-col gap-10">
+        <p>No se encontraron remates</p>
+        <button class="text-lg border-2 bg border-stone-600 transition duration-500 hover:bg-stone-600 hover:text-orange-100">
+          Ver todos los remates
+        </button>
+      </div>
+    </article>
+  </section>
+  <section id="como_participar" class="h-96 bg-stone-800 flex flex-col gap-16 justify-center items-center">
+    <h1 class="font-bold text-3xl text-stone-300 tracking-widest">¿Como participar?</h1>
+    <ul class="flex text-center text-stone-200 w-2/6 justify-around">
+      <li>
+        <ion-icon class="text-5xl" name="person-add"></ion-icon>
+        <h1>Registrate</h1>
+      </li>
+      <li>
+        <ion-icon class="text-5xl" name="mail"></ion-icon>
+        <h1>Inscribite</h1>
+      </li>
+      <li>
+        <ion-icon class="text-5xl" name="cash"></ion-icon>
+        <h1>Paga la garantia</h1>
+      </li>
+      <li>
+        <ion-icon class="text-5xl" name="checkmark-circle"></ion-icon>
+        <h1>Participa</h1>
+      </li>
+    </ul>
+  </section>
+  <section id="contact" class="h-screen flex gap-10 flex-col items-center bg-gradient-to-t from-stone-950 to-stone-800">
+    <div class="text mt-36">
+      <h1 class="font-bold text-3xl text-stone-300 tracking-widest">
+        ¿Quieres rematar con nosotros?
+      </h1>
+      <p class="text-stone-200 text-4xl">Envíanos un correo y nos contactaremos a la brevedad</p>
+    </div>
+    <div class="container grid grid-cols-2 h-2/4 gap-8">
+      <div class="p-4 h-full">
+        <form class="p-6 h-full flex flex-col bg-stone-500 rounded-md text-teal-600">
+          <div class="h-1/3 grid grid-cols-2 grid-rows-2 gap-x-3">
+            <div class="pl-2 h-2/3 gap-2 bg-teal-50 rounded-sm flex justify-start items-center w-full">
+              <label class="relative" for="user_name">Nombre</label>
+              <input type="text" class="h-full w-full bg-transparent focus:outline-none" name="user_name">
+            </div>
+            <div class="pl-2 h-2/3 gap-2 bg-teal-50 rounded-sm flex justify-start items-center w-full">
+              <label class="relative" for="user_name">Asunto</label>
+              <input type="text" class="h-full w-full bg-transparent focus:outline-none" name="user_name">
+            </div>
+            <div class="pl-2 h-2/3 gap-2 bg-teal-100 rounded-sm flex justify-start items-center w-full">
+              <label class="relative" for="user_name">Correo</label>
+              <input type="email" class="h-full w-full bg-transparent focus:outline-none" name="user_name">
+            </div>
+            <div class="pl-2 h-2/3 gap-2 bg-teal-100 rounded-sm flex justify-start items-center w-full">
+              <label class="relative" for="user_name">Telefono</label>
+              <input type="tel" class="h-full w-full bg-transparent focus:outline-none" name="user_name">
+            </div>
+          </div>
+          <div class="mb-3 pl-2 pt-2 h-2/4 w-full gap-2 bg-teal-200 rounded-sm relative">
+            <label class="z-10" for="user_name">Mensaje</label>
+            <textarea name="" id="" class="h-full w-full resize-none bg-transparent focus:outline-none"></textarea>
+          </div>
+          <div class="h-1/5 flex justify-end">
+            <input class="bg-teal-300 w-24 h-10" style="cursor: pointer;" type="submit" value="Enviar">
+          </div>
+        </form>
+      </div>
+      <div class="social_media">
+        <ul class="h-full w-full flex flex-col justify-center gap-11">
+          <ul class="flex items-center gap-4">
+            <li class="text-5xl text-teal-500">
+              <a href="https://api.whatsapp.com/send?phone=56999535061&text=Hola!%20Me%20gustaría%20saber%20más%20de%20cómo%20rematar%20con%20ustedes">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </a>
+            </li>
+            <li class="text-xl text-orange-100">Whatsapp</li>
+          </ul>
+          <ul class="flex items-center gap-4">
+            <li class="text-5xl text-teal-500">
+              <a href="https://web.facebook.com/centralremates?_rdc=1&_rdr">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            <li class="text-xl text-orange-100">Central Remates</li>
+          </ul>
+          <ul class="flex items-center gap-4">
+            <li class="text-5xl text-teal-500">
+              <a href="https://www.instagram.com/centralremates">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li class="text-xl text-orange-100">@centralremates</li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <footer class="px-7 h-14 bg-orange-100 text-stone-700 flex gap-24 items-center justify-around">
+    <p>info@remates.cl | Bodajoz 100, Las Condes, Santiago de Chile | © Central Remates 2021</p>
+    <button class="w-56 text-lg border-2 bg border-stone-600 transition duration-500 hover:bg-stone-600 hover:text-orange-100">
+      Contactanos
+    </button>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+    "salaries": [
+        {
+            "position": "Gerente",
+            "department": "Gerentia",
+            "salary": 60000
+        },
+        {
+            "position": "Asociado de Ventas",
+            "department": "Ventas",
+            "salary": 45000
+        },
+        {
+            "position": "Contador",
+            "department": "Contabilidad",
+            "salary": 55000
+        },
+        {
+            "position": "Recepcionista",
+            "department": "Recepcion",
+            "salary": 38000
+        },
+        {
+            "position": "Control de Calidad",
+            "department": "Calidad",
+            "salary": 48000
+        },
+        {
+            "position": "Recursos Humanos",
+            "department": "Recursos Humanos",
+            "salary": 52000
+        },
+        {
+            "position": "Servicio al cliente",
+            "department": "Clientes",
+            "salary": 40000
+        }
+    ]
+}

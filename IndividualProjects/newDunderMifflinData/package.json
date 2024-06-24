@@ -1,0 +1,22 @@
+{
+  "name": "dundermifflindata",
+  "version": "1.0.0",
+  "description": "Data and models for Dunder Mifflin project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node scripts/app.js",
+    "update-repo": "git add . && git commit -m 'Update commit' && git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HurBC/Node_JS/tree/main/newDunderMifflinData"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "HurBC",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
