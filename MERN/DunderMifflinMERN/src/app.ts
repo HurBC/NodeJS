@@ -3,9 +3,9 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 
-import authRoutes from "./routes/authRoutes";
-import clientRoutes from "./routes/clientRoutes";
-import localityRoutes from "./routes/localityRoutes";
+import userRoutes from "./routes/users.routes";
+import localityRoutes from "./routes/locality.routes";
+import clientRoutes from "./routes/client.routes";
 
 dotenv.config();
 
@@ -15,8 +15,8 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use("/api", authRoutes);
+app.use("/api", userRoutes);
+app.use("/api", localityRoutes);
 app.use("/api", clientRoutes);
-app.use("/api/locality", localityRoutes);
 
 export default app;

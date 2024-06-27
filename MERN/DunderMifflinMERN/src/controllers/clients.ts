@@ -1,61 +1,45 @@
 import { Request, Response } from "express";
-import { ClientSchemaType } from "../schemas/clientsSchemas";
-import Client from "../models/clientModel";
-import { ClientRequestType } from "../types/requestTypes";
-
-export const getClientByEmail = async (email: string) => {
-	try {
-		await Client.findOne({ email });
-
-		return false;
-	} catch {
-		return true;
-	}
-};
-
-export const getClients = async (req: ClientRequestType, res: Response) => {
-	try {
-		const clients = await Client.find({ responsible: req.user?.id })
-			.populate("responsible")
-			.populate("address");
-
-		res.json(clients);
-	} catch (error) {
-		return res
-			.status(400)
-			.json({ message: `Error in get clients ${error}` });
-	}
-};
+import { ClientFromRequestType, ClientType } from "../types/ClientTypes";
+import { createAddress } from "./localitys";
+import { Client } from "../models/Client";
+import { ObjectId } from "mongodb";
 
 export const createClient = async (req: Request, res: Response) => {
-	const data: ClientSchemaType = req.body;
+  const {address, responsible, ...data}: ClientFromRequestType = req.body;
+  let client: ClientType = data;
 
-	let isMatch = false;
+  if (address) {
+    const newAddress = await createAddress(address);
 
-	// verify if email exist
-	if (data.email) {
-		isMatch = await getClientByEmail(data.email);
-	}
+    if (newAddress) {
+      client.address = newAddress._id;
+    }
+  }
 
-	// if match, the email is exist
-	if (isMatch)
-		return res.status(409).json({ message: "Email already exists" });
+  try {
+    const newClient = await new Client().create({
+      ...client,
+      responsible: new ObjectId(responsible)
+    });
+  
+    res.status(200).json(newClient);
+  } catch (error) {
+    res.status(500).json({
+			message: "Error registering client",
+			error,
+		})
+  }
+}
 
-	try {
-		const client = new Client({
-			name: data.name,
-			email: data.email,
-			phone: data.phone,
-			address: data.address,
-			responsible: data.responsible,
-		});
+export const getClients = async (req: Request, res: Response) => {
+  try {
+    const clients = await new Client().getAll();
 
-		const newClient = await client.save();
-
-		res.json(newClient);
-	} catch (error) {
-		return res
-			.status(400)
-			.json({ message: `Error in client creation ${error}` });
-	}
-};
+    res.status(200).json(clients);
+  } catch (error) {
+    res.status(500).json({
+			message: "Error getting clients",
+			error,
+		})
+  }
+}
