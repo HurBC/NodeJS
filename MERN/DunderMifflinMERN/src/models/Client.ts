@@ -1,7 +1,7 @@
 import { Collection } from "mongodb";
 import { ClientType } from "../types/ClientTypes";
 import { getDB } from "../db";
-import { cleanData } from "../libs/cleanData";
+import { cleanData } from "../_utils";
 export class Client {
   private collection: Collection<ClientType>;
 

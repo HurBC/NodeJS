@@ -5,7 +5,7 @@ import {
 	CommuneType,
 } from "../types/LocalityTypes";
 import { getDB } from "../db";
-import { cleanData } from "../libs/cleanData";
+import { cleanData } from "../_utils";
 
 export class Commune {
 	private collection: Collection<CommuneType>;
