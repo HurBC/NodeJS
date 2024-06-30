@@ -7,9 +7,9 @@ const parse = (schema, data) => {
 		message = schema.parse(data);
 	} catch (error) {
 		if (error instanceof z.ZodError) {
-			message = error.errors.map((e) => e.message).join(", ");
+			message = error;
 		} else {
-			message = error.message;
+			message = error;
 		}
 	}
 
@@ -22,7 +22,10 @@ const safeParse = (schema, data) => {
 	console.log(message);
 };
 
-const mySchema = z.string();
+const mySchema = z.string({
+	required_error: "Name is required",
+	invalid_type_error: "Name must be a AMOGUS",
+});
 
 let message = "";
 
