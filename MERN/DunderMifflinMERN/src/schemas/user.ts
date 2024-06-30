@@ -66,6 +66,6 @@ export const queryForUsersSchema = registerSchema
 	.omit({ password: true })
 	.partial()
 	.extend({
-		id: z.string({ required_error: "id is required" }).uuid().optional(),
+		id: z.string().uuid().optional(),
 		many: z.enum(["true", "false"]),
 	});
