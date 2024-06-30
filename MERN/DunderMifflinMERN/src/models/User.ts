@@ -2,6 +2,7 @@ import { Collection, ObjectId } from "mongodb";
 import {
   FilterUserType,
 	FilterUsersType,
+	UpdateUserType,
 	UserType,
 } from "../types/UserTypes";
 import { getDB } from "../db";
@@ -38,21 +39,27 @@ export class User {
 		return await this.collection.findOne(cleanedQuery);
 	}
 
-	// async update(userData: UpdateUserType) {
-	// 	const { id, ...data } = userData;
+	async update(userData: UpdateUserType) {
+		const { _id, ...data } = userData;
 
-	// 	return await this.collection.findOneAndUpdate(
-	// 		{
-	// 			_id: new ObjectId(id),
-	// 		},
-	// 		{
-	// 			$set: data,
-	// 		},
-	// 		{
-	// 			returnDocument: "after",
-	// 		}
-	// 	);
-	// }
+    const cleanedQuery = cleanData(data, ["email", "firstName", "lastName", "password", "role"]);
+
+		return await this.collection.findOneAndUpdate(
+			{
+				_id: _id
+			},
+			{
+				$set: cleanedQuery,
+			},
+			{
+				returnDocument: "after",
+			}
+		);
+	}
+
+	async delete(_id: ObjectId) {
+		return await this.collection.deleteOne({ _id });
+	}
 
 	private async createIndexes() {
 		await this.collection.createIndex(

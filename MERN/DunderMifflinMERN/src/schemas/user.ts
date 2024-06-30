@@ -1,4 +1,3 @@
-import { ObjectId } from "mongodb";
 import { z } from "zod";
 
 export const registerSchema = z.object({
@@ -59,11 +58,14 @@ export const loginSchema = z.object({
 		.max(30),
 });
 
-export const queryForUsersSchema = registerSchema
-	.omit({ password: true, email: true })
-	.extend({ id: z.instanceof(ObjectId) })
-	.partial();
-
 export const updateUserSchema = registerSchema
 	.partial()
-	.extend({ id: z.instanceof(ObjectId) });
+	.extend({ id: z.string() });
+
+export const queryForUsersSchema = registerSchema
+	.omit({ password: true })
+	.partial()
+	.extend({
+		id: z.string({ required_error: "id is required" }).uuid().optional(),
+		many: z.enum(["true", "false"]),
+	});

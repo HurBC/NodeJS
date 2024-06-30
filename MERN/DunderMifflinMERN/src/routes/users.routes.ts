@@ -1,13 +1,15 @@
 import { Router } from "express";
 import { validateSchema } from "../middlewares/validateSchemas";
-import { registerSchema } from "../schemas/user";
-import { getQuery, getUsers, register } from "../controllers/users";
+import { registerSchema, updateUserSchema } from "../schemas/user";
+import { deleteUser, getQuery, getUsers, register, updateUser } from "../controllers/users";
+import { z } from "zod";
 
 const router = Router();
 
-router.post("/users", validateSchema(registerSchema), register);
 router.get("/users", getUsers);
-// router.put("/users", updateUser);
 router.get("/users-by", getQuery);
+router.post("/users", validateSchema(registerSchema), register);
+router.put("/users", validateSchema(updateUserSchema), updateUser);
+router.delete("/users", deleteUser);
 
 export default router;

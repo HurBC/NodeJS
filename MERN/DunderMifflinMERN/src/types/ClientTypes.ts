@@ -1,5 +1,4 @@
 import { ObjectId } from "mongodb"
-import { UserType } from "./UserTypes";
 import { AddressWithCommuneType } from "./LocalityTypes";
 
 export type ClientType = {

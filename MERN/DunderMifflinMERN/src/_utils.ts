@@ -50,3 +50,48 @@ export const verifyQuery = <T extends { [label: string]: any }>(
 		});
 	}
 };
+
+export const formatData = <T extends { [label: string]: any }>(props: {
+	data: T;
+	newFields?:
+		| { [label: string]: any }
+		| { [label: string]: keyof T | (keyof T)[] };
+	deleteFields?: (keyof T)[];
+}) => {
+	const formatedData: { [label: string]: any } = { ...props.data };
+	const dataKeys = Object.keys(props.data);
+
+	dataKeys.forEach((key) => {
+		if (props.deleteFields && props.deleteFields.includes(key)) {
+			delete formatedData[key];
+		}
+	});
+
+	if (props.newFields) {
+		Object.entries(props.newFields).forEach(([key, value]) => {
+			if (Array.isArray(value)) {
+				value.forEach((item) => {
+					if (dataKeys.includes(item)) {
+						formatedData[key] =
+							formatedData[key] === "" ||
+							formatedData[key] === undefined
+								? props.data[item]
+								: formatedData[key] + " " + props.data[item];
+					} else {
+						formatedData[key] =
+							formatedData[key] === "" ||
+							formatedData[key] === undefined
+								? item
+								: formatedData[key] + " " + item;
+					}
+				});
+			} else if (dataKeys.includes(value)) {
+				formatedData[key] = props.data[value];
+			} else {
+				formatedData[key] = value;
+			}
+		});
+	}
+
+	return formatedData;
+};
