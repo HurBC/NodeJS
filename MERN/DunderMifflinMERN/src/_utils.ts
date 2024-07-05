@@ -16,6 +16,41 @@ export const cleanData = <T extends { [label: string]: any }>(
 	return cleanedData;
 };
 
+export const verifyJSON = <T extends { [label: string]: any }>(
+	data: T,
+	fields: (keyof T)[] | "all",
+	verifyType: "no-empty-string" // fill this in future
+) => {
+	if (verifyType === "no-empty-string") {
+		let errorMsg: string = "Field";
+		const fieldsError: (keyof T)[] = [];
+
+		if (Array.isArray(fields)) {
+			if (fields.length > 0) errorMsg = "Fields";
+
+			fields.forEach((field) => {
+				if (data[field] === "") {
+					fieldsError.push(field);
+				}
+			});
+		}
+
+		if (fields === "all") {
+			Object.keys(data).forEach((field) => {
+				if (data[field] === "") {
+					fieldsError.push(field as keyof T);
+				}
+			})
+		}
+
+		if (fieldsError.length > 0) {
+			throw new Error(
+				`${errorMsg} [${fieldsError.join(", ")}] can't be empty string`
+			);
+		}
+	}
+};
+
 export const verifyQuery = <T extends { [label: string]: any }>(
 	query: T,
 	validFields: (keyof T)[] | { all: "true"; without: (keyof T)[] },
@@ -53,17 +88,15 @@ export const verifyQuery = <T extends { [label: string]: any }>(
 
 export const formatData = <T extends { [label: string]: any }>(props: {
 	data: T;
-	newFields?:
-		| { [label: string]: any }
-		| { [label: string]: keyof T | (keyof T)[] };
+	newFields?: { [label: string]: any | keyof T | (keyof T)[] };
 	deleteFields?: (keyof T)[];
 }) => {
-	const formatedData: { [label: string]: any } = { ...props.data };
+	const newData: { [label: string]: any } = { ...props.data };
 	const dataKeys = Object.keys(props.data);
 
 	dataKeys.forEach((key) => {
 		if (props.deleteFields && props.deleteFields.includes(key)) {
-			delete formatedData[key];
+			delete newData[key];
 		}
 	});
 
@@ -72,26 +105,24 @@ export const formatData = <T extends { [label: string]: any }>(props: {
 			if (Array.isArray(value)) {
 				value.forEach((item) => {
 					if (dataKeys.includes(item)) {
-						formatedData[key] =
-							formatedData[key] === "" ||
-							formatedData[key] === undefined
+						newData[key] =
+							newData[key] === "" || newData[key] === undefined
 								? props.data[item]
-								: formatedData[key] + " " + props.data[item];
+								: newData[key] + " " + props.data[item];
 					} else {
-						formatedData[key] =
-							formatedData[key] === "" ||
-							formatedData[key] === undefined
+						newData[key] =
+							newData[key] === "" || newData[key] === undefined
 								? item
-								: formatedData[key] + " " + item;
+								: newData[key] + " " + item;
 					}
 				});
 			} else if (dataKeys.includes(value)) {
-				formatedData[key] = props.data[value];
+				newData[key] = props.data[value];
 			} else {
-				formatedData[key] = value;
+				newData[key] = value;
 			}
 		});
 	}
 
-	return formatedData;
+	return newData;
 };
