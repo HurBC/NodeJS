@@ -44,6 +44,9 @@ export const registerSchema = z.object({
 		.max(30),
 });
 
+// insertManySchema
+export const insertManySchema = z.array(registerSchema);
+
 export const loginSchema = z.object({
 	email: z
 		.string({

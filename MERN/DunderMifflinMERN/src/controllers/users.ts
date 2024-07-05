@@ -6,11 +6,11 @@ import {
 	UserType,
 } from "../types/UserTypes";
 import bc from "bcryptjs";
-import { User } from "../models/User";
 import { queryForUsersSchema } from "../schemas/user";
 import { z } from "zod";
 import { ObjectId } from "mongodb";
 import { formatData, verifyQuery } from "../_utils";
+import { User } from "../models/User";
 
 export const register = async (req: Request, res: Response) => {
 	const data: UserType = req.body;
@@ -26,7 +26,7 @@ export const register = async (req: Request, res: Response) => {
 			updated_at: new Date(),
 		});
 
-		res.status(200).json({
+		res.status(201).json({
 			message: "User registered successfully",
 		});
 	} catch (error) {
@@ -36,6 +36,37 @@ export const register = async (req: Request, res: Response) => {
 		});
 	}
 };
+
+export const insertMany = async (req: Request, res: Response) => {
+	const data: UserType[] = req.body;
+
+	try {
+		const newUsers = data.map((user) => {
+			const hashedPassword = bc.hashSync(user.password, 10);
+
+			return formatData({
+				data: user,
+				newFields: {
+					password: hashedPassword,
+					role: user.role ?? "employee",
+					created_at: new Date(),
+					updated_at: new Date(),
+				},
+			}) as UserType;
+		});
+
+		await new User().bulkCreate(newUsers)
+
+		res.status(200).json({
+			message: "Users registered successfully"
+		});
+	} catch (error) {
+		res.status(500).json({
+			message: "Error registering user",
+			error,
+		});
+	}
+}
 
 const getUsersBy = async (query: QueryUsersType, res: Response) => {
 	try {
@@ -154,7 +185,7 @@ export const updateUser = async (req: Request, res: Response) => {
 
 		res.status(200).json({
 			message: "User updated successfully",
-			user: formatData({
+			results: formatData({
 				data: user,
 				deleteFields: ["password", "_id"],
 				newFields: {
@@ -186,7 +217,7 @@ export const updateUser = async (req: Request, res: Response) => {
 
 export const getUsers = async (_: any, res: Response) => {
 	try {
-		const users = await new User().getAll();
+		const users = await new User().findAll();
 
 		const formatUsers = users.map((user) => {
 			return formatData({
@@ -199,7 +230,10 @@ export const getUsers = async (_: any, res: Response) => {
 			});
 		});
 
-		res.status(200).json(formatUsers);
+		res.status(200).json({
+			message: "Users fetched successfully",
+			results: formatUsers,
+		});
 	} catch (error) {
 		res.status(500).json({
 			message: "Error fetching users",

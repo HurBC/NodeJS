@@ -22,7 +22,13 @@ export class User {
 		return await this.collection.findOne({ _id: result.insertedId });
 	}
 
-	async getAll() {
+	async bulkCreate(usersData: UserType[]) {
+		const results = await this.collection.insertMany(usersData);
+
+		return results;
+	}
+
+	async findAll() {
 		return await this.collection.find().toArray();
 	}
 
